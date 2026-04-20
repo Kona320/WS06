@@ -18,6 +18,7 @@
   "author": "Laurea FullStack 2026",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
     "mongodb": "^7.1.1",
