@@ -11,7 +11,7 @@ function PostPage() {
   const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
-    fetch(`/api/posts/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/posts/${id}`)
       .then(res => res.json())
       .then(data => {
         setPost(data)
@@ -26,7 +26,7 @@ function PostPage() {
   async function handleDelete() {
     setDeleting(true)
     try {
-      const res = await fetch(`/api/posts/${id}`, { method: 'DELETE' })
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${id}`, { method: 'DELETE' })
       if (!res.ok) throw new Error('Failed to delete post')
       navigate('/blog')
     } catch (err) {

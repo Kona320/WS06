@@ -12,7 +12,7 @@ function EditPostPage() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch(`/api/posts/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/posts/${id}`)
       .then(res => res.json())
       .then(data => {
         setPost(data)
@@ -37,7 +37,7 @@ function EditPostPage() {
     }
 
     try {
-      const res = await fetch(`/api/posts/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
